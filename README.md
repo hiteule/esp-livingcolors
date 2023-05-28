@@ -66,19 +66,19 @@ If the LED is off, the procedure was successful and the remote control address h
 
 ## FAQ
 
-**The LED will flash quickly (every 100ms)**
+**The LED will flash quickly (every 100ms)**\
 The card does not know the remote address. You should run a learning procedure. Please see the "How to use it ?" section.
 
-**The LED will flash slowly (every 1s)**
+**The LED will flash slowly (every 1s)**\
 The remote address learning procedure fail (no address found). You should restart a learning procedure. Place the remote control close to the card and press several buttons.
 
-**Do I need to do a remote address learning procedure every time I launch the card?**
+**Do I need to do a remote address learning procedure every time I launch the card?**\
 No, the remote address is saved in the Atmega ROM.
 
-**Can I continue to use the remote control?**
+**Can I continue to use the remote control?**\
 Yes, you can continue to use the remote control alongside the card.
 
-**Can I register another remote control?**
+**Can I register another remote control?**\
 Yes, simply launch a remote address learning procedure.
 Please note that you can only register one remote control at a time.
 
