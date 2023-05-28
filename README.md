@@ -5,6 +5,8 @@ The board is based on an ESP8266 & [ESPHome] to integrate the LivingColors lamp 
 The communication with the lamp is managed by an Atmega328 microcontroller & a CC2500 module (2.4ghz RF transceiver).
 The ESP8266 & Atmega328 communicate through an I2C bus.
 
+:warning: This board ONLY works with the 1st generation LivingColors.
+
 ## PCB
 
 The card must be powered with 5V via the J1 connector.
