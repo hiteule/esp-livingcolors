@@ -1,0 +1,4 @@
+<area shape="rect" href="$class_c_c2500.html#c48fae570a0ae39fbdb4b8c6f1d23b58" title="CC2500::sendBurstCommand" alt="" coords="489,6,681,32">
+<area shape="rect" href="$class_c_c2500.html#37783ba471d0e96c961a1916052aa7c1" title="CC2500::sendByte" alt="" coords="520,56,651,83">
+<area shape="rect" href="$class_c_c2500.html#9affed02875e355b67acb49da89e895e" title="CC2500::sendStrobeCommand" alt="" coords="240,107,440,134">
+<area shape="rect" href="$class_c_c2500.html#e3cb5c6be392382f5ffc71b0b12fbf07" title="CC2500::spiTransfer" alt="" coords="731,31,869,58">

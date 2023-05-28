@@ -1,0 +1,7 @@
+<area shape="rect" href="$class_living_colors.html#bc7cb81c4e9e8917edae31ca0d888b96" title="LivingColors::learnLamps" alt="" coords="259,56,424,83">
+<area shape="rect" href="$class_living_colors.html#cd05ccb74a93b857a8553136beaa3d3f" title="LivingColors::sendCommand" alt="" coords="249,107,433,133">
+<area shape="rect" href="$class_living_colors.html#8cd9214bd27021570162a3dc5af3f58a" title="LivingColors::setLampColourHSV" alt="" coords="484,5,695,32">
+<area shape="rect" href="$class_living_colors.html#7b1f9429c822d22f9d6832e6b055814f" title="LivingColors::setLampColourRGB" alt="" coords="483,56,696,83">
+<area shape="rect" href="$class_living_colors.html#9c27d56eff47cb255b4f957fb6c3c8a0" title="LivingColors::turnLampOff" alt="" coords="505,107,673,133">
+<area shape="rect" href="$class_living_colors.html#f5060062782d6c0c338d40076438ffa4" title="LivingColors::turnLampOnHSV" alt="" coords="492,157,687,184">
+<area shape="rect" href="$class_living_colors.html#4b882e958dff94caa0867877cb999d23" title="LivingColors::turnLampOnRGB" alt="" coords="491,208,688,235">

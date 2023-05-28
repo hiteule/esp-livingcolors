@@ -1,0 +1,7 @@
+<area shape="rect" href="$class_living_colors.html#c5a6614faf8431cd04daba1ea599b4ca" title="LivingColors::checkAddress" alt="" coords="228,5,409,32">
+<area shape="rect" href="$class_living_colors.html#294acb22e70deca1bfdbd16150ad2fbd" title="LivingColors::clearLamps" alt="" coords="236,56,401,83">
+<area shape="rect" href="$class_c_c2500.html#c48fae570a0ae39fbdb4b8c6f1d23b58" title="CC2500::sendBurstCommand" alt="" coords="468,107,660,133">
+<area shape="rect" href="$class_c_c2500.html#7f02d4d3155d0afd8500277d4f7f4aa5" title="CC2500::sendCommand" alt="" coords="483,157,645,184">
+<area shape="rect" href="$class_c_c2500.html#9affed02875e355b67acb49da89e895e" title="CC2500::sendStrobeCommand" alt="" coords="219,208,419,235">
+<area shape="rect" href="$class_c_c2500.html#e3cb5c6be392382f5ffc71b0b12fbf07" title="CC2500::spiTransfer" alt="" coords="709,157,848,184">
+<area shape="rect" href="$class_c_c2500.html#37783ba471d0e96c961a1916052aa7c1" title="CC2500::sendByte" alt="" coords="499,208,629,235">
