@@ -28,8 +28,8 @@ The additional [libraries] used are:
 
 ### Atmega
 
-The Atmega is responsible to control the LivingColors via RF (like your conventional remote control).
-We use the Arduino bootloader. If it not already the case, you should install it on your Atmega.
+The Atmega is controling the LivingColors via RF (like your conventional remote control).
+We use Arduino bootloader. If it not already the case, you should install it on your Atmega.
 To communicate in RF, we use the library made by [George Knutsel]. Thanks to him!
 
 #### Flash the firmware
@@ -39,13 +39,13 @@ To communicate in RF, we use the library made by [George Knutsel]. Thanks to him
 * Plug the board to your computer with JP1 and the [ESP/Atmega programmer] (for the Atmega, you don't need to power it).
 * Open the firmware with the Arduino IDE and flash the Atmega.
 
-Now you can unplug the Atmega and go to the next step.
+Now, you can unplug the Atmega and go to the next step.
 
 ### ESP
 
-The ESP is responsible for exposing the LivingColors in Home Assisant. Do do it, we use [ESPHome].
+The ESP is exposing the LivingColors in Home Assisant. To do it, we use [ESPHome].
 To do so:
-* Install the ESPHome module in HomeAssistant.
+* Install the ESPHome module on HomeAssistant.
 * Plug the board to your computer with JP3 and the [ESP/Atmega programmer]. Don't forget to power the programmer with an external power source between 3.3V and 12V.
 * In the ESPHome module, create a new device.
 * Put the `light_i2c_output.h` file in your HomeAssistant instance: `/config/esphome/light_i2c_output.h`.
@@ -69,7 +69,7 @@ If the LED is off, the procedure was successful and the remote control address h
 ## FAQ
 
 **The LED will flash quickly (every 100ms)**\
-The card does not know the remote address. You should run a learning procedure. Please see the "How to use it ?" section.
+The card doesn't know the remote address. You should run a learning procedure. Please see the "How to use it ?" section.
 
 **The LED will flash slowly (every 1s)**\
 The remote address learning procedure fail (no address found). You should restart a learning procedure. Place the remote control close to the card and press several buttons.
