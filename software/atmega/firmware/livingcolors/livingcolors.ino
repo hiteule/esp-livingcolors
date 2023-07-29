@@ -14,8 +14,6 @@
 
 LivingColors livcol(lcCS, lcSCK, lcMOSI, lcMISO);
 
-char SerBuf[BufSize];
-
 struct LightData
 {
   char r0;
@@ -133,6 +131,15 @@ void send(LightData lightData) {
     && lightData.g0 == '0' && lightData.g1 == '0' && lightData.g2 == '0'
     && lightData.b0 == '0' && lightData.b1 == '0' && lightData.b2 == '0') {
     livcol.turnLampOff(Val('0'));
+
+    return;
+  }
+
+  // White: rotating mode
+  if (lightData.r0 == '2' && lightData.r1 == '5' && lightData.r2 == '5'
+    && lightData.g0 == '2' && lightData.g1 == '5' && lightData.g2 == '5'
+    && lightData.b0 == '2' && lightData.b1 == '5' && lightData.b2 == '5') {
+    livcol.turnLampOnRotating(Val('0'));
 
     return;
   }

@@ -57,6 +57,8 @@ ESP should boot normally and the LivingColors should be visible in HomeAssistant
 
 ## How to use it ?
 
+### Register the remote address
+
 To be able to communicate with the LivingColors, you need to extract and register the remote address.
 
 * Hold the `SW_LEARN` switch and power on the board to enter in the learning mode.
@@ -64,6 +66,10 @@ To be able to communicate with the LivingColors, you need to extract and registe
 
 If the procedure fails, the LED will flash slowly (every 1 second). Repeat the learning procedure.
 If the LED is off, the procedure was successful and the remote control address has been extracted and registered. You can now use it :)
+
+### Colors rotating mode
+
+To activate the colors rotating mode (seen when holding ON remote key), you have to turn on the LivingColors with the white color.
 
 
 ## FAQ

@@ -179,6 +179,13 @@ public:
     void turnLampOnHSV(unsigned char index, unsigned char h, unsigned char s, unsigned char v);
 
     /*!
+     * Turns lamp with given index in colors rotating mode if lamp address is valid.
+     *
+     * \param[in] index Lamp index, must be 0 <= index < getNumLamps();
+     */
+    void LivingColors::turnLampOnRotating(unsigned char index);
+
+    /*!
      * Turns lamp with given index off if lamp address is valid.
      *
      * \param[in] index Lamp index, must be 0 <= index < getNumLamps();

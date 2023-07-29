@@ -344,6 +344,11 @@ void LivingColors::turnLampOnHSV(unsigned char index, unsigned char h, unsigned 
     sendCommand(index, 0x05, h, s, v);
 }
 
+void LivingColors::turnLampOnRotating(unsigned char index)
+{
+    sendCommand(index, 0x0c, '0', '0', '0');
+}
+
 void LivingColors::turnLampOff(unsigned char index)
 {
     sendCommand(index, 0x07, 0, 0, 0);
