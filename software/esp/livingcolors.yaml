@@ -18,7 +18,8 @@ api:
     key: "TODO"
 
 ota:
-
+  platform: esphome
+  password: "TODO"
 
 wifi:
   ssid: !secret wifi_ssid
