@@ -48,7 +48,6 @@ To do so:
 * Install the ESPHome module on HomeAssistant.
 * Plug the board to your computer with JP3 and the [ESP/Atmega programmer]. Don't forget to power the programmer with an external power source between 3.3V and 12V.
 * In the ESPHome module, create a new device.
-* Put the `light_i2c_output.h` file in your HomeAssistant instance: `/config/esphome/light_i2c_output.h`.
 * Update your ESPHome device with the `livingcolors.yaml` file.
 * Install it on the ESP.
 
@@ -67,10 +66,9 @@ To be able to communicate with the LivingColors, you need to extract and registe
 If the procedure fails, the LED will flash slowly (every 1 second). Repeat the learning procedure.
 If the LED is off, the procedure was successful and the remote control address has been extracted and registered. You can now use it :)
 
-### Colors rotating mode
+### Color cycle mode
 
-To activate the colors rotating mode (seen when holding ON remote key), you have to turn on the LivingColors with the white color.
-
+To activate the color cycle mode (seen when holding ON remote key), you have to turn on the related light effect on HomeAssistant.
 
 ## FAQ
 

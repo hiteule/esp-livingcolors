@@ -12,20 +12,27 @@
 #define LED   7
 #define LEARN 8
 
+#define COMMAND_OFF '0'
+#define COMMAND_COLOR '1'
+#define COMMAND_EFFECT_COLOR_CYCLE '2'
+
 LivingColors livcol(lcCS, lcSCK, lcMOSI, lcMISO);
 
 struct LightData
 {
-  char r0;
-  char r1;
-  char r2;
-  char g0;
-  char g1;
-  char g2;
-  char b0;
-  char b1;
-  char b2;
+  char command;
+  char h0;
+  char h1;
+  char h2;
+  char s0;
+  char s1;
+  char s2;
+  char v0;
+  char v1;
+  char v2;
 };
+
+bool lampState = false;
 
 void setup() {
   Serial.begin(9600);
@@ -101,67 +108,73 @@ void loop() {
 // Function that executes whenever data is received from master
 // This function is registered as an event, see setup()
 void receiveEvent(int howMany) {
-  char buf[25];
+  char buf[13];
   int i=0;
-  while (1 <= Wire.available()) {
+  while (1 <= Wire.available() && i<=12) {
     char c = Wire.read();
     buf[i] = c;
     i++;
   }
   buf[i]=0;
 
-  // rrr-ggg-bbb
+  // c|hhh-sss-vvv
   LightData lightData;
-  lightData.r0 = buf[0];
-  lightData.r1 = buf[1];
-  lightData.r2 = buf[2];
-  lightData.g0 = buf[4];
-  lightData.g1 = buf[5];
-  lightData.g2 = buf[6];
-  lightData.b0 = buf[8];
-  lightData.b1 = buf[9];
-  lightData.b2 = buf[10];
+  lightData.command = buf[0];
+  lightData.h0 = buf[2];
+  lightData.h1 = buf[3];
+  lightData.h2 = buf[4];
+  lightData.s0 = buf[6];
+  lightData.s1 = buf[7];
+  lightData.s2 = buf[8];
+  lightData.v0 = buf[10];
+  lightData.v1 = buf[11];
+  lightData.v2 = buf[12];
 
   send(lightData);
 }
 
 void send(LightData lightData) {
-  // Black: turn off
-  if (lightData.r0 == '0' && lightData.r1 == '0' && lightData.r2 == '0'
-    && lightData.g0 == '0' && lightData.g1 == '0' && lightData.g2 == '0'
-    && lightData.b0 == '0' && lightData.b1 == '0' && lightData.b2 == '0') {
+  // Turn off
+  if (lightData.command == COMMAND_OFF) {
     livcol.turnLampOff(Val('0'));
+    lampState = false;
 
     return;
   }
 
-  // White: rotating mode
-  if (lightData.r0 == '2' && lightData.r1 == '5' && lightData.r2 == '5'
-    && lightData.g0 == '2' && lightData.g1 == '5' && lightData.g2 == '5'
-    && lightData.b0 == '2' && lightData.b1 == '5' && lightData.b2 == '5') {
+  // Effect color cycle
+  if (lightData.command == COMMAND_EFFECT_COLOR_CYCLE) {
     livcol.turnLampOnRotating(Val('0'));
+    lampState = true;
 
     return;
   }
 
-  byte valR = Val(lightData.r0, lightData.r1, lightData.r2);
-  byte valG = Val(lightData.g0, lightData.g1, lightData.g2);
-  byte valB = Val(lightData.b0, lightData.b1, lightData.b2);
+  // Set color
+  byte valH = Val(lightData.h0, lightData.h1, lightData.h2);
+  byte valS = Val(lightData.s0, lightData.s1, lightData.s2);
+  byte valV = Val(lightData.v0, lightData.v1, lightData.v2);
 
-  livcol.turnLampOnRGB(Val('0'), valR, valG, valB);
+  if (lampState == false) {
+    livcol.turnLampOnHSV(Val('0'), valH, valS, valV);
+    lampState = true;
+
+    return;
+  }
+
+  livcol.setLampColourHSV(Val('0'), valH, valS, valV);
 }
 
 byte Val(char c) {
   byte t = 0;
-  if (c>='0')
-    if (c<='9')
-    {
-      t = c - '0';
-    }
-  return t;      
+
+  if (c >= '0' && c <= '9') {
+    t = c - '0';
+  }
+
+  return t;
 }
 
-byte Val(char c1, char c2, char c3)
-{
-  return Val(c3) + 10 * Val(c2) + 100 * Val(c1); 
+byte Val(char c1, char c2, char c3) {
+  return Val(c3) + 10 * Val(c2) + 100 * Val(c1);
 }
