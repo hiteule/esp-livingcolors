@@ -23,10 +23,7 @@ namespace livingcolors {
     state_ = state;
     state_->set_gamma_correct(0);
     state_->set_default_transition_length(0);
-
-    std::vector<light::LightEffect *> effects;
-    effects.push_back(new LivingColorsCycleLightEffect());
-    state_->add_effects(effects);
+    state_->add_effects({new LivingColorsCycleLightEffect()});
   }
 
   void LivingColorsComponent::write_state(light::LightState *state) {
