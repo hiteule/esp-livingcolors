@@ -34,7 +34,7 @@ namespace livingcolors {
     char command;
     if (brightness > 0.0) {
       float red, green, blue;
-      state->current_values_as_rgb(&red, &green, &blue, false);
+      state->current_values_as_rgb(&red, &green, &blue);
 
       int _hue;
       float _saturation, _value;
