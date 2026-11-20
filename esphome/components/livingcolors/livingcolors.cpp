@@ -20,10 +20,13 @@ namespace livingcolors {
   }
 
   void LivingColorsComponent::setup_state(light::LightState *state) {
+    static light::LightEffect *const effects[] = {
+        new LivingColorsCycleLightEffect()
+    };
+
     state_ = state;
-    state_->set_gamma_correct(0);
     state_->set_default_transition_length(0);
-    state_->add_effects({new LivingColorsCycleLightEffect()});
+    state_->add_effects(effects, sizeof(effects) / sizeof(effects[0]));
   }
 
   void LivingColorsComponent::write_state(light::LightState *state) {
